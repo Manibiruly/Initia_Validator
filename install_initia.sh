@@ -123,7 +123,7 @@ else
 fi
 
 echo -e "\n Create a wallet for your validator"
-/root/go/bin/initiad keys add wallet --recover
+/root/go/bin/initaid keys add wallet
 echo -e "\n---------------------------------------------\n"
 echo "DO NOT FORGET TO SAVE THE SEED PHRASE"
 echo "Go to: https://faucet.testnet.initia.xyz/  => Claim faucet"
