@@ -123,8 +123,19 @@ else
 fi
 
 echo -e "\n Create a wallet for your validator"
-/root/go/bin/initaid keys add wallet
+#!/bin/bash
+
+echo -e "\n Restore a wallet using mnemonic key"
 echo -e "\n---------------------------------------------\n"
+
+# Prompt user for mnemonic key
+mnemonic=$(zenity --entry --text="Enter your mnemonic key:")
+
+# Restore wallet using mnemonic key
+/root/go/bin/initaid keys add wallet --recover <<< "$mnemonic"
+
+echo -e "\n---------------------------------------------\n"
+
 echo "DO NOT FORGET TO SAVE THE SEED PHRASE"
 echo "Go to: https://faucet.testnet.initia.xyz/  => Claim faucet"
 echo -e "\n---------------------------------------------\n"
